@@ -6,9 +6,9 @@
     --brand-white-color: #FFFFFF; /*Основной белый цвет фона, логотип, текст футер, герой*/
     --logo-black-color: #000000; /*Цвет логотипа в шапке*/
     --mail-footer-color: rgba(255, 255, 255, 0.6); /*Цвет почты футера*/
-    --secondary-background: #F5F4FA; /*Вторичный цвет фона, цвет кнопок*/
+    --secondary-background: #F5F4FA; /*Вторичный цвет фона, цвет кнопок, Фон иконок секции ОСОБЕННОСТИ */
     --footer-background: #2F303A; /*Фон футера и Героя*/
-    --feachers-icon-background: #F5F4FA; /* Фон иконок секции ОСОБЕННОСТИ */
+    --icon-color: #AFB1B8; /*Цвет иконок*/
 
     --header-border: #ECECEC; /* Цвет граници Header*/
     --gallery-border: #EEEEEE; /* Цвет граници Gallery-card */
@@ -19,6 +19,9 @@
 
     --shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); /* Тень для карточек "Наша команда"*/
     --shadow-hero-button: 0px 4px 4px 0px #00000026; /* Тень кнопки hero */
+    --shadow-filter-button: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
+    --shadow-gallery: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
+
 
 }
 
@@ -49,10 +52,13 @@ img {       /*Убираем зазор под изображением, огр�
 }
 .visually-hiden {      /*--- Скрывает элементы----*/
     position: absolute;
-    clip: rect(0 0 0 0);
     width: 1px;
     height: 1px;
     margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 .conteiner {   /*Контейнер для центрирования шапки, контента и футера*/
     margin-left: auto;
@@ -81,11 +87,6 @@ img {       /*Убираем зазор под изображением, огр�
     padding-top: 94px;
     padding-bottom: 94px;
 }
-.card-thumb {
-
-}
-
-
 
 /* -----------------ШАПКА (HEADER)-------------------- */
 .header {
@@ -155,28 +156,27 @@ img {       /*Убираем зазор под изображением, огр�
     padding-top: 32px;
     padding-bottom: 32px;
 }
-.contacts-nav-link::before {
-    content: "";
-    margin-right: 10px;
-    align-self: center;
-
-    background-repeat: no-repeat; /* Не множить*/
-    background-position: center; /* Центрировать*/
-    background-size: contain; /* заполнить блок полностью */
-}
-.contacts-nav-link.contacts-icon-mail::before{
+.contacts-nav-icon-mail {
     width: 16px;
     height: 12px;
-    background-image: url(../img/mail.svg);
+    margin-right: 10px;
+    fill: var(--main-color);
+    align-self: center;
 }
-.contacts-nav-link.contacts-icon-phone::before{
+.contacts-nav-icon-phone {
     width: 10px;
     height: 16px;
-    background-image: url(../img/phone.svg);
+    margin-right: 10px;
+    fill: var(--main-color);;
+    align-self: center;
 }
 
 .site-nav-link:hover, .site-nav-link:focus, .contacts-nav-link:hover, .contacts-nav-link:focus {
     color: var(--accent-color);
+}
+.contacts-nav-link:hover .contacts-nav-icon-mail, .contacts-nav-link:focus .contacts-nav-icon-mail,
+.contacts-nav-link:hover .contacts-nav-icon-phone, .contacts-nav-link:focus .contacts-nav-icon-phone {
+    fill: var(--accent-color);
 }
 
 /* ------------------стр Студия*/
@@ -257,30 +257,40 @@ img {       /*Убираем зазор под изображением, огр�
     flex-basis: calc(100% / 4 - var(--item-gap)); /*----calc((100% / кол-во элементов в строке - значение марджина)----*/
     margin-right: var(--item-gap);
 }
-.features-item::before{
-    display: block;
-    content: "";
-    background-color: var(--feachers-icon-background);
-    
+.features-icon {
+    display: flex;
     height: 120px;
-    margin-bottom: 30px;
+    background-color: var(--secondary-background);
+    margin-bottom: var(--item-gap);
+    border-radius: 4px;
+}
+.features-antenna {
+    width: 65.32px;
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
     align-self: center;
-    
-    background-repeat: no-repeat; /* Не множить*/
-    background-position: center; /* Центрировать*/
-    background-size: 70px; /* заполнить блок полностью */
 }
-.features-item.feachers-icon-antenna::before{
-    background-image: url(../img/feachers-antenna.svg);
+.features-clock {
+    width: 66.96px;
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
 }
-.features-item.feachers-icon-clock::before{
-    background-image: url(../img/feachers-clock.svg);
+.features-diagram {
+    width: 70px;
+    height: 53.69px;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
 }
-.features-item.feachers-icon-diagram::before{
-    background-image: url(../img/fiachers-diagram.svg);
-}
-.features-item.feachers-icon-astronaut::before{
-    background-image: url(../img/feachers-astronaut.svg);
+.features-astronaut {
+    width: 70px;
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
 }
 
 .features-title {  /*Заголовок h3 секция Особенности*/
@@ -331,6 +341,7 @@ img {       /*Убираем зазор под изображением, огр�
 }
 
 .team-card {
+    
     padding-top: 30px;
     padding-bottom: 30px;
 }
@@ -351,90 +362,148 @@ img {       /*Убираем зазор под изображением, огр�
     margin-bottom: 16px;
 }
 
-.team-link {
-    display: inline-flex;
+.team-list-link {
+    display: flex;
+    justify-content: center;
 }
-
-.team-link-item {
+.team-link {
     margin-right: 10px;
 }
-.team-link-item:last-child {
+.team-link:last-child {
     margin-right: 0;
 }
 
-.team-icon {
-    display: inline-block;
-    content: "";
-    background-color: transparent;
-    
+.team-link-item {
+    display: flex;
     height: 44px;
     width: 44px;
-    align-self: center;
+    background-color: transparent;
     border-radius: 50%;
-    
-    background-repeat: no-repeat; /* Не множить*/
-    background-position: center; /* Центрировать*/
-    background-size: 20px; /* заполнить блок полностью */
 }
-.team-icon.team-instagram {
-    background-image: url(../img/instagram.svg);
+
+.team-instagram {
+    width: 20px;
+    height: 20px;
+    fill: var(--icon-color);
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
 }
-.team-icon.team-twitter {
-    background-image: url(../img/twitter.svg);
+.team-twitter {
+    width: 20px;
+    height: 20px;
+    fill: var(--icon-color);
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
 }
-.team-icon.team-facebook {
-    background-image: url(../img/facebook.svg);
+.team-facebook {
+    width: 20px;
+    height: 20px;
+    fill: var(--icon-color);
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
 }
-.team-icon.team-linkedin {
-    background-image: url(../img/linkedin.svg);
+.team-linkedin {
+    width: 20px;
+    height: 20px;
+    fill: var(--icon-color);
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
 }
+.team-link-item:hover, .team-link-item:focus {
+    background-color: var(--accent-color);
+}
+.team-link-item:hover .team-instagram, .team-link-item:focus .team-instagram,
+.team-link-item:hover .team-twitter, .team-link-item:focus .team-twitter,
+.team-link-item:hover .team-facebook, .team-link-item:focus .team-facebook,
+.team-link-item:hover .team-linkedin, .team-link-item:focus .team-linkedin {
+    fill: var(--brand-white-color);
+}
+
 
 /* -------------------------СЕКЦИЯ ПОСТОЯННЫЕ КЛИЕНТЫ----------------------------- */
 .client-link {
-    display: inline-flex;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
 }
 
 .client-link-item {
-    margin-right: 30px;
+    margin-right: var(--item-gap);
 }
 .client-link-item:last-child {
     margin-right: 0;
 }
 
 .client-icon {
-    display: inline-block;
-    content: "";
-    background-color: transparent;
-    
+    display: flex;
     height: 92px;
     width: 170px;
-    align-self: center;
+    border: 1px solid var(--icon-color);
+    background-color: transparent;
     border-radius: 4px;
-    border: 1px solid #AFB1B8;
-    
-    background-repeat: no-repeat; /* Не множить*/
-    background-position: center; /* Центрировать*/
-    background-size: 106px 60px;
 }
-.client-icon.client-yaco {
-    background-image: url(../img/ya$co.svg);
+.client-yaco {
+    width: 41px;
+    height: 46.7px;
+    fill: var(--icon-color);
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
 }
-.client-icon.client-company {
-    background-image: url(../img/company.svg);
+.client-company {
+    width: 40px;
+    height: 52px;
+    fill: var(--icon-color);
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
 }
-.client-icon.client-ctwo {
-    background-image: url(../img/company2.svg);
+.client-ctwo {
+    width: 43.46px;
+    height: 41.18px;
+    fill: var(--icon-color);
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
 }
-.client-icon.client-foster {
-    background-image: url(../img/foster-peters.svg);
+.client-foster {
+    width: 84.44px;
+    height: 40.62px;
+    fill: var(--icon-color);
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
 }
-.client-icon.client-brand {
-    background-image: url(../img/brand.svg);
+.client-brand {
+    width: 62.54px;
+    height: 45.43px;
+    fill: var(--icon-color);
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
 }
-.client-icon.client-tag {
-    background-image: url(../img/tag-line.svg);
+.client-tag {
+    width: 93.79px;
+    height: 43.93px;
+    fill: var(--icon-color);
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+}
+.client-icon:hover, .client-icon:focus {
+    border-color: var(--accent-color);
+}
+.client-icon:hover .client-yaco, .client-icon:focus .client-yaco,
+.client-icon:hover .client-company, .client-icon:focus .client-company,
+.client-icon:hover .client-ctwo, .client-icon:focus .client-ctwo,
+.client-icon:hover .client-foster, .client-icon:focus .client-foster,
+.client-icon:hover .client-brand, .client-icon:focus .client-brand,
+.client-icon:hover .client-tag, .client-icon:focus .client-tag {
+    fill: var(--accent-color);
 }
 
 /* -------------------стр Портфолио*/
@@ -477,6 +546,7 @@ img {       /*Убираем зазор под изображением, огр�
 .btn:hover, .btn:focus {
     color: var(--brand-white-color);
     background-color: var(--accent-color);
+    box-shadow: var(--shadow-filter-button);
 }
 
 /* ------------------СЕКЦИЯ ГАЛЕРЕЯ -------------------------*/
@@ -509,6 +579,9 @@ img {       /*Убираем зазор под изображением, огр�
 
     display: inline-block;
     margin-bottom: 4px;
+}
+.gallery-item:hover, .gallery-item:focus{
+    box-shadow: var(--shadow-gallery);
 }
 
 /* --------------------ПОДВАЛ (FOOTER)--------------------- */
@@ -574,7 +647,13 @@ img {       /*Убираем зазор под изображением, огр�
     display: block;
     margin-bottom: 20px;
 }
-.team-icon.footer-link {
+.team-link-item.footer-link {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.footer-icon {
+    fill: var(--brand-white-color);
+}
+.team-link-item.footer-link:hover, .team-link-item.footer-link:focus {
     background-color: var(--accent-color);
 }
 

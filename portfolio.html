@@ -47,11 +47,20 @@
             <!--Контакты-->
             <ul class="contacts-nav list-none">
                 <li class="contacts-nav-item">
-                    <a href="mailto:info@devstudio.com" class="link-none contacts-nav-link">info@devstudio.com</a>
+                    <a href="mailto:info@devstudio.com" class="link-none contacts-nav-link">
+                        <svg class="contacts-nav-icon-mail">
+                            <use href="./img/symbol-defs.svg#icon-mail"></use>
+                        </svg>
+                        info@devstudio.com
+                    </a>
                 </li>
-
+            
                 <li class="contacts-nav-item">
-                    <a href="tel:+380961111111" class="link-none contacts-nav-link">+38 096 111 11 11</a>
+                    <a href="tel:+380961111111" class="link-none contacts-nav-link">
+                        <svg class="contacts-nav-icon-phone">
+                            <use href="./img/symbol-defs.svg#icon-phone"></use>
+                        </svg>
+                        +38 096 111 11 11</a>
                 </li>
             </ul>
 
@@ -90,10 +99,8 @@
     <!-- ------------------------ГАЛЕРЕЯ-------------------------- -->
                 <ul class="gallery list-none">
                     <li class="gallery-item">
-                        <div class="card-thumb">
                             <img src="./img/image_1.jpg" alt="Ноутбук"/>
-                        </div>
-                        
+
                         <div class="gallery-card">
                             <h2 class="gallery-title">Технокряк</h2>
                             <p>Веб-сайт</p>
@@ -101,9 +108,7 @@
                     </li>
 
                     <li class="gallery-item">
-                        <div class="card-thumb">
                             <img src="./img/image_2.jpg" alt="Баскетбол"/>
-                        </div>
                         
                         <div class="gallery-card">
                             <h2 class="gallery-title">Постер New Orlean vs Golden Star</h2>
@@ -112,9 +117,7 @@
                     </li>
 
                     <li class="gallery-item">
-                        <div class="card-thumb">
                             <img src="./img/image_3.jpg" alt="Рекламный постер"/>
-                        </div>
                         
                         <div class="gallery-card">
                             <h2 class="gallery-title">Ресторан Seafood</h2>
@@ -123,9 +126,7 @@
                     </li>
 
                     <li class="gallery-item">
-                        <div class="card-thumb">
                             <img src="./img/image_4.jpg" alt="Наушники"/>
-                        </div>
                         
                         <div class="gallery-card">
                             <h2 class="gallery-title">Проект Prime</h2>
@@ -134,9 +135,7 @@
                     </li>
 
                     <li class="gallery-item">
-                        <div class="card-thumb">
                             <img src="./img/image_5.jpg" alt="Две коробки"/>
-                        </div>
                         
                         <div class="gallery-card">
                             <h2 class="gallery-title">Проект Boxes</h2>
@@ -145,9 +144,7 @@
                     </li>
 
                     <li class="gallery-item">
-                        <div class="card-thumb">
                             <img src="./img/image_6.jpg" alt="Монитор"/>
-                        </div>
                         
                         <div class="gallery-card">
                             <h2 class="gallery-title">Inspiration has no Borders</h2>
@@ -156,9 +153,7 @@
                     </li>
 
                     <li class="gallery-item">
-                        <div class="card-thumb">
                             <img src="./img/image_7.jpg" alt="Книга"/>
-                        </div>
                         
                         <div class="gallery-card">
                             <h2 class="gallery-title">Издание Limited Edition</h2>
@@ -167,9 +162,7 @@
                     </li>
 
                     <li class="gallery-item">
-                        <div class="card-thumb">
                             <img src="./img/image_8.jpg" alt="Бирка"/>
-                        </div>
                         
                         <div class="gallery-card">
                             <h2 class="gallery-title">Проект LAB</h2>
@@ -178,9 +171,7 @@
                     </li>
 
                     <li class="gallery-item">
-                        <div class="card-thumb">
                             <img src="./img/image_9.jpg" alt="Работа с ноутбуком"/>
-                        </div>
                         
                         <div class="gallery-card">
                             <h2 class="gallery-title">Growing Business</h2>
@@ -195,26 +186,66 @@
 
     <!------------------------------ПОДВАЛ (FOOTER)--------------------------->
     <footer class="footer">
-        <div class="conteiner">
+        <div class="conteiner footer-flex">
             <!--Логотип-->
-            <a href="" class="link-none logo">Web<span class="logo-white">Studio</span></a>
-            <address>
+            <div class="footer-address">
+                <a href="" class="link-none logo">Web<span class="logo-white">Studio</span></a>
+                <address>
     
-                <ul class="list-none">
-                    <li class="footer-item">
-                        <a href="" class="link-none link-adress">г. Киев, пр-т Леси Украинки, 26</a>
+                    <ul class="list-none">
+                        <li class="footer-item">
+                            <a href="" class="link-none link-adress">г. Киев, пр-т Леси Украинки, 26</a>
+                        </li>
+    
+                        <li class="footer-item">
+                            <a href="mailto:info@devstudio.com" class="link-none link-contacts">info@devstudio.com</a>
+                        </li>
+    
+                        <li class="footer-item">
+                            <a href="tel:+380961111111" class="link-none link-contacts">+38 096 111 11 11</a>
+                        </li>
+                    </ul>
+    
+                </address>
+            </div>
+    
+            <section class="footer-network">
+                <h2 class="footer-title">ПРИСОЕДИНЯЙТЕСЬ</h2>
+    
+                <ul class="list-none team-list-link">
+                    <li class="team-link">
+                        <a href="" class="link-none team-link-item footer-link">
+                            <svg class="team-instagram footer-icon">
+                                <use href="./img/symbol-defs.svg#icon-instagram"></use>
+                            </svg>
+                        </a>
                     </li>
     
-                    <li class="footer-item">
-                        <a href="mailto:info@devstudio.com" class="link-none link-contacts">info@devstudio.com</a>
+                    <li class="team-link">
+                        <a href="" class="link-none team-link-item footer-link">
+                            <svg class="team-twitter footer-icon">
+                                <use href="./img/symbol-defs.svg#icon-twitter"></use>
+                            </svg>
+                        </a>
                     </li>
     
-                    <li class="footer-item">
-                        <a href="tel:+380961111111" class="link-none link-contacts">+38 096 111 11 11</a>
+                    <li class="team-link">
+                        <a href="" class="link-none team-link-item footer-link">
+                            <svg class="team-facebook footer-icon">
+                                <use href="./img/symbol-defs.svg#icon-facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+    
+                    <li class="team-link">
+                        <a href="" class="link-none team-link-item footer-link">
+                            <svg class="team-linkedin footer-icon">
+                                <use href="./img/symbol-defs.svg#icon-linkedin"></use>
+                            </svg>
+                        </a>
                     </li>
                 </ul>
-    
-            </address>
+            </section>
         </div>
     </footer>
 
