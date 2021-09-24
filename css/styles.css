@@ -257,41 +257,20 @@ img {       /*Убираем зазор под изображением, огр�
     flex-basis: calc(100% / 4 - var(--item-gap)); /*----calc((100% / кол-во элементов в строке - значение марджина)----*/
     margin-right: var(--item-gap);
 }
-.features-icon {
+.features-box {
     display: flex;
     height: 120px;
     background-color: var(--secondary-background);
     margin-bottom: var(--item-gap);
     border-radius: 4px;
+    justify-content: center;
+    align-items: center;
 }
-.features-antenna {
-    width: 65.32px;
-    height: 70px;
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
-}
-.features-clock {
-    width: 66.96px;
-    height: 70px;
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
-}
-.features-diagram {
-    width: 70px;
-    height: 53.69px;
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
-}
-.features-astronaut {
+.features-icon {
     width: 70px;
     height: 70px;
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
 }
+
 
 .features-title {  /*Заголовок h3 секция Особенности*/
     color: var(--secondary-color);
@@ -379,47 +358,21 @@ img {       /*Убираем зазор под изображением, огр�
     width: 44px;
     background-color: transparent;
     border-radius: 50%;
+    justify-content: center;
+    align-items: center;
 }
 
-.team-instagram {
+.team-icon {
     width: 20px;
     height: 20px;
     fill: var(--icon-color);
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
 }
-.team-twitter {
-    width: 20px;
-    height: 20px;
-    fill: var(--icon-color);
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
-}
-.team-facebook {
-    width: 20px;
-    height: 20px;
-    fill: var(--icon-color);
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
-}
-.team-linkedin {
-    width: 20px;
-    height: 20px;
-    fill: var(--icon-color);
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
-}
+
 .team-link-item:hover, .team-link-item:focus {
     background-color: var(--accent-color);
 }
-.team-link-item:hover .team-instagram, .team-link-item:focus .team-instagram,
-.team-link-item:hover .team-twitter, .team-link-item:focus .team-twitter,
-.team-link-item:hover .team-facebook, .team-link-item:focus .team-facebook,
-.team-link-item:hover .team-linkedin, .team-link-item:focus .team-linkedin {
+
+.team-link-item:hover .team-icon, .team-link-item:focus .team-icon {
     fill: var(--brand-white-color);
 }
 
@@ -438,71 +391,27 @@ img {       /*Убираем зазор под изображением, огр�
     margin-right: 0;
 }
 
-.client-icon {
+.client-box {
     display: flex;
     height: 92px;
     width: 170px;
     border: 1px solid var(--icon-color);
     background-color: transparent;
     border-radius: 4px;
+    justify-content: center;
+    align-items: center;
 }
-.client-yaco {
-    width: 41px;
-    height: 46.7px;
+.client-icon {
+    width: 106px;
+    height: 60px;
     fill: var(--icon-color);
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
 }
-.client-company {
-    width: 40px;
-    height: 52px;
-    fill: var(--icon-color);
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
-}
-.client-ctwo {
-    width: 43.46px;
-    height: 41.18px;
-    fill: var(--icon-color);
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
-}
-.client-foster {
-    width: 84.44px;
-    height: 40.62px;
-    fill: var(--icon-color);
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
-}
-.client-brand {
-    width: 62.54px;
-    height: 45.43px;
-    fill: var(--icon-color);
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
-}
-.client-tag {
-    width: 93.79px;
-    height: 43.93px;
-    fill: var(--icon-color);
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
-}
-.client-icon:hover, .client-icon:focus {
+
+.client-box:hover, .client-box:focus {
     border-color: var(--accent-color);
 }
-.client-icon:hover .client-yaco, .client-icon:focus .client-yaco,
-.client-icon:hover .client-company, .client-icon:focus .client-company,
-.client-icon:hover .client-ctwo, .client-icon:focus .client-ctwo,
-.client-icon:hover .client-foster, .client-icon:focus .client-foster,
-.client-icon:hover .client-brand, .client-icon:focus .client-brand,
-.client-icon:hover .client-tag, .client-icon:focus .client-tag {
+
+.client-box:hover .client-icon, .client-box:focus .client-icon {
     fill: var(--accent-color);
 }
 
@@ -566,6 +475,12 @@ img {       /*Убираем зазор под изображением, огр�
 }
 
 .gallery-card {
+    color: var(--main-color);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 3%;
+
     padding: 20px 24px;
     border: 1px solid var(--gallery-border);
 }
@@ -580,8 +495,12 @@ img {       /*Убираем зазор под изображением, огр�
     display: inline-block;
     margin-bottom: 4px;
 }
-.gallery-item:hover, .gallery-item:focus{
+.gallery-link {
+
+}
+.gallery-link:hover, .gallery-link:focus{
     box-shadow: var(--shadow-gallery);
+    cursor: pointer;
 }
 
 /* --------------------ПОДВАЛ (FOOTER)--------------------- */
@@ -594,6 +513,7 @@ img {       /*Убираем зазор под изображением, огр�
 }
 .footer-flex {
     display:flex;
+    align-items: baseline;
 }
 .footer-address {
     margin-right: 70px;
@@ -632,9 +552,6 @@ img {       /*Убираем зазор под изображением, огр�
     color: var(--accent-color);
 }
 
-.footer-network{
-    padding-top: 12px;
-}
 .footer-title {  
     color: var(--brand-white-color);
 
